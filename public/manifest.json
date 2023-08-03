@@ -3,9 +3,10 @@
     "background_color": "#23292F",
     "display": "standalone",
     "scope": "/",
-    "start_url": "/",
+    "start_url": "/sw.js",
     "name": "Event Utilities",
     "short_name": "EvtUtils",
+    "description": "App for Event Technology",
     "icons": [
         {
             "src": "/icon-192x192.png",

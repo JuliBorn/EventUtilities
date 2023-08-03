@@ -1,15 +1,13 @@
 'use client';
 import VoltageDrop from '../components/VoltageDrop';
 
-
 import Image from 'next/image';
 
 import React, { useState, useEffect } from 'react';
 
-import Header from '../components/Header';
 export default function Home() {
     return (
-        <div className='w-5/6 mx-auto sm:w-1/2'>
+        <div className='mx-auto '>
             <VoltageDrop />
             {/* <DMXAddressToBinaryCalculator />
                 <DMXAddressingTool />{' '} */}

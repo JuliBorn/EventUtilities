@@ -34,7 +34,25 @@ export const useDMXStore = create(
                 //console.log(current);
                 set({ address: address });
             },
+        }),
+        {
+            name: 'dmx-storage', // name of the item in the storage (must be unique)
+            storage: createJSONStorage(() => localStorage), // (optional) by default, 'localStorage' is used
+        }
+    )
+);
 
+export const usePowerStore = create(
+    persist(
+        (set, get) => ({
+            devices: [],
+            setDevices: (device) => {
+                //console.log(current);
+                // set({ address: address });
+            },
+            addDevice: (device) => {
+                console.log("adding Device");
+            },
         }),
         {
             name: 'dmx-storage', // name of the item in the storage (must be unique)

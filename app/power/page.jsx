@@ -5,6 +5,9 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { motion } from 'framer-motion';
 
+import { usePowerStore } from '../../store';
+
+
 export default function Page() {
     const [devices, setDevices] = useState([]);
 
@@ -12,6 +15,8 @@ export default function Page() {
     const [amount, setAmount] = useState(0);
 
     const [totalPowerUsage, setTotalPowerUsage] = useState(0);
+
+    useEffect(() => {}, [devices]);
 
     const handleAdd = () => {
         //console.log('added ', powerUsage * amount, ' watts');
@@ -65,7 +70,7 @@ export default function Page() {
                 </div>
                 <div className='flex grid items-center grid-cols-10 my-1 bg-gray-200 border border-gray-300 rounded-sm '>
                     <div className='flex flex-row col-span-10'>
-                        <button className='w-20 h-full text-gray-600 bg-gray-300 rounded-l outline-none cursor-pointer  hover:text-gray-700 hover:bg-gray-400'>
+                        <button className='w-20 h-full text-gray-600 bg-gray-300 rounded-l outline-none cursor-pointer hover:text-gray-700 hover:bg-gray-400'>
                             <span className='m-auto text-2xl font-thin'>−</span>
                         </button>
                         <input
@@ -82,7 +87,7 @@ export default function Page() {
                 <div className='flex flex-col'>
                     <div className='my-1 text-semibold text-md'>Amount:</div>
                     <div className='flex flex-row col-span-10'>
-                        <button className='w-20 h-full text-gray-600 bg-gray-300 rounded-l outline-none cursor-pointer  hover:text-gray-700 hover:bg-gray-400'>
+                        <button className='w-20 h-full text-gray-600 bg-gray-300 rounded-l outline-none cursor-pointer hover:text-gray-700 hover:bg-gray-400'>
                             <span className='m-auto text-2xl font-thin'>−</span>
                         </button>
                         <input
